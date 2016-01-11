@@ -29,5 +29,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return myArray.count;
     }
     
-}
+    @IBAction func addNewValue(sender: UIButton) {
+    myArray.append(<#T##newElement: String##String#>)
+        
+    }
 
+
+
+
+
+}
