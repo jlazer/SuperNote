@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func addNewValue(sender: UIButton) {
         //1. Create the alert controller.
-        var alert = UIAlertController(title: "Some Title", message: "Enter a text", preferredStyle: .Alert)
+        var alert = UIAlertController(title: "Create A Note", message: "Please fill the parameters", preferredStyle: .Alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextFieldWithConfigurationHandler({ (titleTextField) -> Void in
