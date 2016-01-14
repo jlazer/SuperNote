@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let titleTextField = alert.textFields![0] as UITextField
             let notesTextField = alert.textFields![0] as UITextField
             print("Text field: \(titleTextField.text)")
-            print(
+            print("text field: \(notesTextField.text)")
             self.myArray.append(titleTextField.text!)
             self.tableViewOutlet.reloadData()
         }))
