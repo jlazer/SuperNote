@@ -49,8 +49,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let titleTextField = alert.textFields![0] as UITextField
             let notesTextField = alert.textFields![0] as UITextField
-            print("Text field: \(titleTextField.text)")
-            print("text field: \(notesTextField.text)")
+            print(" Title Text field: \(titleTextField.text)")
+            print("Notes Text field: \(notesTextField.text)")
             self.myArray.append(titleTextField.text!)
             self.tableViewOutlet.reloadData()
         }))
@@ -60,6 +60,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        <#code#>
+    }
 
 
 

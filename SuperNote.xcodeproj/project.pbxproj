@@ -14,6 +14,7 @@
 		E73A50ED1C3ECB230036BFFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73A50EB1C3ECB230036BFFD /* LaunchScreen.storyboard */; };
 		E73A50F81C3ECB230036BFFD /* SuperNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A50F71C3ECB230036BFFD /* SuperNoteTests.swift */; };
 		E73A51031C3ECB230036BFFD /* SuperNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A51021C3ECB230036BFFD /* SuperNoteUITests.swift */; };
+		E77AA3941C4948880050E7DE /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AA3931C4948880050E7DE /* secondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E73A50FE1C3ECB230036BFFD /* SuperNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73A51021C3ECB230036BFFD /* SuperNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperNoteUITests.swift; sourceTree = "<group>"; };
 		E73A51041C3ECB230036BFFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E77AA3931C4948880050E7DE /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				E73A50E21C3ECB230036BFFD /* AppDelegate.swift */,
 				E73A50E41C3ECB230036BFFD /* ViewController.swift */,
+				E77AA3931C4948880050E7DE /* secondViewController.swift */,
 				E73A50E61C3ECB230036BFFD /* Main.storyboard */,
 				E73A50E91C3ECB230036BFFD /* Assets.xcassets */,
 				E73A50EB1C3ECB230036BFFD /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73A50E51C3ECB230036BFFD /* ViewController.swift in Sources */,
+				E77AA3941C4948880050E7DE /* secondViewController.swift in Sources */,
 				E73A50E31C3ECB230036BFFD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +488,7 @@
 				E73A51091C3ECB230036BFFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E73A510A1C3ECB230036BFFD /* Build configuration list for PBXNativeTarget "SuperNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				E73A510C1C3ECB230036BFFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E73A510D1C3ECB230036BFFD /* Build configuration list for PBXNativeTarget "SuperNoteUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				E73A510F1C3ECB230036BFFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
