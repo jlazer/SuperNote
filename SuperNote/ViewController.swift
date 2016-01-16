@@ -13,7 +13,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     
-    var myArray = ["Tom", "Jim","Bob","Justin", "Sally"]
+    var notesInTableViewArray = ["Tom", "Jim","Bob","Justin", "Sally"]
+    var alertTextFieldDictionary: Dictionary<String, String> = ["titleTextFieldKey":"","notesTextFieldKey":""]
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +26,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
-        cell.textLabel?.text = myArray[indexPath.row]
+        cell.textLabel?.text = notesInTableViewArray[indexPath.row]
         return cell
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myArray.count;
+        return notesInTableViewArray.count;
     }
     
     @IBAction func addNewValue(sender: UIButton) {
@@ -49,9 +53,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let titleTextField = alert.textFields![0] as UITextField
             let notesTextField = alert.textFields![0] as UITextField
+            //Placing the contents of the two textfields into a dictionary so that they can be passed to the next viewcontroller.
+            self.alertTextFieldDictionary["titleTextFieldKey"] = titleTextField.text
+            self.alertTextFieldDictionary["notesTextFieldKey"] = notesTextField.text
+            //Printing the contents into the console so that you can see if they are recieving the text from the UITextField.
             print(" Title Text field: \(titleTextField.text)")
             print("Notes Text field: \(notesTextField.text)")
-            self.myArray.append(titleTextField.text!)
+            self.notesInTableViewArray.append(titleTextField.text!)
             self.tableViewOutlet.reloadData()
         }))
         
@@ -61,7 +69,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        <#code#>
+        let nextViewController = segue.destinationViewController as! secondViewController
+        nextViewController.alertTextFieldDictionarySecondViewController = alertTextFieldDictionary
+        
     }
 
 

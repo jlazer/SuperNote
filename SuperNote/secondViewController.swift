@@ -9,6 +9,10 @@
 import UIKit
 
 class secondViewController: UIViewController {
+   // var titleTextFieldSecondViewController = ""
+   // var notesTextFieldSecondViewController = ""
+    var alertTextFieldDictionarySecondViewController: Dictionary<String, String> = ["":""]
+    
     
     @IBOutlet weak var titlelabel: UILabel!
 
@@ -16,16 +20,12 @@ class secondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("This is from the secondViewController!!\(alertTextFieldDictionarySecondViewController)")
+        notesLabel.text = ""
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
     /*
     // MARK: - Navigation
 
