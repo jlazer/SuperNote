@@ -11,7 +11,8 @@ import UIKit
 class secondViewController: UIViewController {
    // var titleTextFieldSecondViewController = ""
    // var notesTextFieldSecondViewController = ""
-    var alertTextFieldDictionarySecondViewController: Dictionary<String, String> = ["":""]
+    //var alertTextFieldDictionarySecondViewController: Dictionary<String, String> = ["":""]
+    var alertTextFieldContentsInSecondViewController = alertTextFieldContents()
     
     
     @IBOutlet weak var titlelabel: UILabel!
@@ -20,8 +21,13 @@ class secondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("This is from the secondViewController!!\(alertTextFieldDictionarySecondViewController)")
-        notesLabel.text = ""
+        
+        print("This is from the secondViewController!! Title TextField: \(alertTextFieldContentsInSecondViewController.titleTextField)")
+        print("This is from the secondViewController!! Notes TextField: \(alertTextFieldContentsInSecondViewController.notesTextField)")
+        titlelabel.text = "\(alertTextFieldContentsInSecondViewController.titleTextField)"
+        notesLabel.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
+        
+        
         // Do any additional setup after loading the view.
     }
 

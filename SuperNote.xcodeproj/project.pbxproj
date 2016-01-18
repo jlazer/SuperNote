@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3EFE9891C4D9F2A00363AE4 /* alertTextFieldContentsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFE9881C4D9F2A00363AE4 /* alertTextFieldContentsClass.swift */; };
 		E73A50E31C3ECB230036BFFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A50E21C3ECB230036BFFD /* AppDelegate.swift */; };
 		E73A50E51C3ECB230036BFFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A50E41C3ECB230036BFFD /* ViewController.swift */; };
 		E73A50E81C3ECB230036BFFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73A50E61C3ECB230036BFFD /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D3EFE9881C4D9F2A00363AE4 /* alertTextFieldContentsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alertTextFieldContentsClass.swift; sourceTree = "<group>"; };
 		E73A50DF1C3ECB230036BFFD /* SuperNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73A50E21C3ECB230036BFFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E73A50E41C3ECB230036BFFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E73A50E21C3ECB230036BFFD /* AppDelegate.swift */,
+				D3EFE9881C4D9F2A00363AE4 /* alertTextFieldContentsClass.swift */,
 				E73A50E41C3ECB230036BFFD /* ViewController.swift */,
 				E77AA3931C4948880050E7DE /* secondViewController.swift */,
 				E73A50E61C3ECB230036BFFD /* Main.storyboard */,
@@ -262,6 +265,7 @@
 				E73A50E51C3ECB230036BFFD /* ViewController.swift in Sources */,
 				E77AA3941C4948880050E7DE /* secondViewController.swift in Sources */,
 				E73A50E31C3ECB230036BFFD /* AppDelegate.swift in Sources */,
+				D3EFE9891C4D9F2A00363AE4 /* alertTextFieldContentsClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
