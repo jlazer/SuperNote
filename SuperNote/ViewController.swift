@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     
-    var notesInTableViewArray = ["Tom", "Jim","Bob","Justin", "Sally"]
+    var notesInTableViewArray = [alertTextFieldContents]()
     //var alertTextFieldDictionary: Dictionary<String, String> = ["titleTextFieldKey":"","notesTextFieldKey":""]
     
     
@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //3. Grab the value from the text field, and print it when the user clicks OK.
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let titleTextField = alert.textFields![0] as UITextField
-            let notesTextField = alert.textFields![0] as UITextField
+            let notesTextField = alert.textFields![1] as UITextField
             //Placing the contents of the two textfields into the class so that they can be passed to the next viewcontroller.
             self.alertTextFieldContentsInViewController.titleTextField = (titleTextField.text!)
             self.alertTextFieldContentsInViewController.notesTextField = (notesTextField.text!)
@@ -62,9 +62,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //self.alertTextFieldDictionary["titleTextFieldKey"] = titleTextField.text
             //self.alertTextFieldDictionary["notesTextFieldKey"] = notesTextField.text
             //Printing the contents into the console so that you can see if they are recieving the text from the UITextField.
-            print(" Title Text field: \(self.alertTextFieldContentsInViewController.titleTextField)")
-            print("Notes Text field: \(self.alertTextFieldContentsInViewController.notesTextField)")
-            self.notesInTableViewArray.append(titleTextField.text!)
+            //print(" Title Text field: \(self.alertTextFieldContentsInViewController.titleTextField)")
+            //print("Notes Text field: \(self.alertTextFieldContentsInViewController.notesTextField)")
+            self.notesInTableViewArray.append(alertTextFieldContents(titleTextField:"\(titleTextField)",notesTextField:"\(notesTextField))
             self.tableViewOutlet.reloadData()
         }))
         
@@ -74,7 +74,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(alertTextFieldContentsInViewController)
         let nextViewController = segue.destinationViewController as! secondViewController
+        var indexPath = tableViewOutlet.indexPathForSelectedRow!
+        print(indexPath.row)
+        
         nextViewController.alertTextFieldContentsInSecondViewController = alertTextFieldContentsInViewController
         
     }
