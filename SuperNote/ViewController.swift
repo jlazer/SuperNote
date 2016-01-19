@@ -11,11 +11,14 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var alertTextFieldContentsInViewController = alertTextFieldContents()
+    //var alertTextFieldContentsInViewController = alertTextFieldContents()
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     
+    //Creating an array of the custom class alertTextFieldContents
+    
     var notesInTableViewArray = [alertTextFieldContents]()
+    
     //var alertTextFieldDictionary: Dictionary<String, String> = ["titleTextFieldKey":"","notesTextFieldKey":""]
     
     
@@ -28,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Configuring The TableView.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
-        cell.textLabel?.text = notesInTableViewArray[indexPath.row]
+        cell.textLabel?.text = notesInTableViewArray[indexPath.row].titleTextField
         return cell
         
     }
@@ -39,7 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Add Note Button
     @IBAction func addNewValue(sender: UIButton) {
         //1. Create the alert controller.
-        var alert = UIAlertController(title: "Create A Note", message: "Please fill the parameters", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Create A Note", message: "Please fill the parameters", preferredStyle: .Alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextFieldWithConfigurationHandler({ (titleTextField) -> Void in
@@ -56,15 +59,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let titleTextField = alert.textFields![0] as UITextField
             let notesTextField = alert.textFields![1] as UITextField
             //Placing the contents of the two textfields into the class so that they can be passed to the next viewcontroller.
-            self.alertTextFieldContentsInViewController.titleTextField = (titleTextField.text!)
-            self.alertTextFieldContentsInViewController.notesTextField = (notesTextField.text!)
+            //self.alertTextFieldContentsInViewController.titleTextField = (titleTextField.text!)
+            //self.alertTextFieldContentsInViewController.notesTextField = (notesTextField.text!)
             
             //self.alertTextFieldDictionary["titleTextFieldKey"] = titleTextField.text
             //self.alertTextFieldDictionary["notesTextFieldKey"] = notesTextField.text
             //Printing the contents into the console so that you can see if they are recieving the text from the UITextField.
             //print(" Title Text field: \(self.alertTextFieldContentsInViewController.titleTextField)")
             //print("Notes Text field: \(self.alertTextFieldContentsInViewController.notesTextField)")
-            self.notesInTableViewArray.append(alertTextFieldContents(titleTextField:"\(titleTextField)",notesTextField:"\(notesTextField))
+            var currentContent = alertTextFieldContents()
+            currentContent.titleTextField = titleTextField.text!
+            currentContent.notesTextField = notesTextField.text!
+            self.notesInTableViewArray.append(currentContent)
             self.tableViewOutlet.reloadData()
         }))
         
@@ -74,17 +80,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(alertTextFieldContentsInViewController)
+        //print(alertTextFieldContentsInViewController)
         let nextViewController = segue.destinationViewController as! secondViewController
         var indexPath = tableViewOutlet.indexPathForSelectedRow!
         print(indexPath.row)
         
-        nextViewController.alertTextFieldContentsInSecondViewController = alertTextFieldContentsInViewController
+        
+        nextViewController.alertTextFieldContentsInSecondViewController = 
         
     }
-
-
-
 
 
 }
