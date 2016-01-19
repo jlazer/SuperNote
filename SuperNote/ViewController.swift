@@ -83,10 +83,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //print(alertTextFieldContentsInViewController)
         let nextViewController = segue.destinationViewController as! secondViewController
         var indexPath = tableViewOutlet.indexPathForSelectedRow!
-        print(indexPath.row)
+        var selectedTableCell = notesInTableViewArray[indexPath.row]
         
         
-        nextViewController.alertTextFieldContentsInSecondViewController = 
+        
+        nextViewController.alertTextFieldContentsInSecondViewController = selectedTableCell
         
     }
 
