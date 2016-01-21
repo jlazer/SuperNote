@@ -71,8 +71,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //print(alertTextFieldContentsInViewController)
         let nextViewController = segue.destinationViewController as! secondViewController
-        var indexPath = tableViewOutlet.indexPathForSelectedRow!
-        var selectedTableCell = notesInTableViewArray[indexPath.row]
+        let indexPath = tableViewOutlet.indexPathForSelectedRow!
+        let selectedTableCell = notesInTableViewArray[indexPath.row]
         
         
         

@@ -9,9 +9,7 @@
 import UIKit
 
 class secondViewController: UIViewController {
-   // var titleTextFieldSecondViewController = ""
-   // var notesTextFieldSecondViewController = ""
-    //var alertTextFieldDictionarySecondViewController: Dictionary<String, String> = ["":""]
+  //Creating an instance of alertTextFieldContents Class.
     var alertTextFieldContentsInSecondViewController = alertTextFieldContents()
     
     
@@ -19,6 +17,7 @@ class secondViewController: UIViewController {
 
     @IBOutlet weak var notesLabel: UILabel!
     
+    @IBOutlet weak var notesTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,11 +25,14 @@ class secondViewController: UIViewController {
         print("This is from the secondViewController!! Notes TextField: \(alertTextFieldContentsInSecondViewController.notesTextField)")
         titlelabel.text = "\(alertTextFieldContentsInSecondViewController.titleTextField)"
         notesLabel.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
-        
+        notesTextView.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
         
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func updateNotesWithContentsOfTextView(sender: UIButton) {
+        notesTextView.text = alertTextFieldContentsInSecondViewController.notesTextField
+    }
     
     /*
     // MARK: - Navigation
