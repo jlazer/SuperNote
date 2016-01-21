@@ -26,12 +26,14 @@ class secondViewController: UIViewController {
         titlelabel.text = "\(alertTextFieldContentsInSecondViewController.titleTextField)"
         notesLabel.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
         notesTextView.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
-        
+        //alertTextFieldContentsInSecondViewController.notesTextField = notesTextView.text
         // Do any additional setup after loading the view.
     }
 
     @IBAction func updateNotesWithContentsOfTextView(sender: UIButton) {
+        alertTextFieldContentsInSecondViewController.notesTextField = notesTextView.text
         notesTextView.text = alertTextFieldContentsInSecondViewController.notesTextField
+        notesLabel.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
     }
     
     /*
