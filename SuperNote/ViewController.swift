@@ -11,18 +11,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //var alertTextFieldContentsInViewController = alertTextFieldContents()
-    
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     //Creating an array of the custom class alertTextFieldContents
     
     var notesInTableViewArray = [alertTextFieldContents]()
-    
-    //var alertTextFieldDictionary: Dictionary<String, String> = ["titleTextFieldKey":"","notesTextFieldKey":""]
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,20 +51,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let titleTextField = alert.textFields![0] as UITextField
             let notesTextField = alert.textFields![1] as UITextField
-            //Placing the contents of the two textfields into the class so that they can be passed to the next viewcontroller.
-            //self.alertTextFieldContentsInViewController.titleTextField = (titleTextField.text!)
-            //self.alertTextFieldContentsInViewController.notesTextField = (notesTextField.text!)
+            //Placing the contents of the two textfields into the a buffer.
             
-            //self.alertTextFieldDictionary["titleTextFieldKey"] = titleTextField.text
-            //self.alertTextFieldDictionary["notesTextFieldKey"] = notesTextField.text
-            //Printing the contents into the console so that you can see if they are recieving the text from the UITextField.
-            //print(" Title Text field: \(self.alertTextFieldContentsInViewController.titleTextField)")
-            //print("Notes Text field: \(self.alertTextFieldContentsInViewController.notesTextField)")
             var currentContent = alertTextFieldContents()
             currentContent.titleTextField = titleTextField.text!
             currentContent.notesTextField = notesTextField.text!
             self.notesInTableViewArray.append(currentContent)
             self.tableViewOutlet.reloadData()
+            //Printing the contents into the console so that you can see if they are recieving the text from the UITextField.
+            print(" Title Text field: \(currentContent.titleTextField)")
+            print("Notes Text field: \(currentContent.notesTextField)")
         }))
         
         // 4. Present the alert.
