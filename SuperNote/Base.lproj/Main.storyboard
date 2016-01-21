@@ -61,6 +61,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hKZ-rs-TwN" appends="YES" id="iJN-J0-lrc"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="UAy-Xi-Ueb" customClass="I"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
@@ -69,6 +73,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hKZ-rs-TwN"/>
             </objects>
             <point key="canvasLocation" x="1085" y="279"/>
         </scene>

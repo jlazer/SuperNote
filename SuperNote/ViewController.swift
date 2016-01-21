@@ -31,6 +31,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notesInTableViewArray.count;
+        
+        //creating the startup alert.
+        let startupAlert = UIAlertController(title: "Instructions", message: "Please tap the + to create a new note", preferredStyle: .Alert)
+        self .presentViewController(startupAlert, animated: true, completion: nil)
+        
+        
+        
     }
     //Add Note Button
     @IBAction func addNewValue(sender: UIButton) {
@@ -62,6 +69,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(" Title Text field: \(currentContent.titleTextField)")
             print("Notes Text field: \(currentContent.notesTextField)")
         }))
+        
+        
+        
+        
+        
         
         // 4. Present the alert.
         self.presentViewController(alert, animated: true, completion: nil)
