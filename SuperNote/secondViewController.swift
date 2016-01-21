@@ -31,8 +31,9 @@ class secondViewController: UIViewController {
     }
 
     @IBAction func updateNotesWithContentsOfTextView(sender: UIButton) {
+        //Allowing users to edit the contents of their notes.
         alertTextFieldContentsInSecondViewController.notesTextField = notesTextView.text
-        notesTextView.text = alertTextFieldContentsInSecondViewController.notesTextField
+        //notesTextView.text = alertTextFieldContentsInSecondViewController.notesTextField
         notesLabel.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
     }
     
