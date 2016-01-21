@@ -69,11 +69,16 @@
                     <navigationItem key="navigationItem" id="UAy-Xi-Ueb" customClass="I"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="superNoteNameLabel" destination="xQN-xb-1Un" id="3Xe-kz-MTS"/>
                         <outlet property="tableViewOutlet" destination="kXX-3j-Lw5" id="DRD-z3-1FE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="hKZ-rs-TwN"/>
+                <tapGestureRecognizer id="hKZ-rs-TwN">
+                    <connections>
+                        <action selector="whenTapped:" destination="BYZ-38-t0r" id="KpH-Of-GoB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1085" y="279"/>
         </scene>
