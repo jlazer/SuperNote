@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableViewOutlet: UITableView!
-    @IBOutlet weak var superNoteNameLabel: UILabel!
+    //@IBOutlet weak var superNoteNameLabel: UILabel!
     //Creating an array of the custom class alertTextFieldContents
     var notesInTableViewArray = [alertTextFieldContents]()
     
@@ -60,16 +60,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     //creating a tap gesture recognizer to display an alert.
-    @IBAction func whenTapped(sender: UITapGestureRecognizer) {
-        let selectedPoint = sender.locationInView(self.view)
-        print(selectedPoint)
-        if CGRectContainsPoint(superNoteNameLabel.frame, selectedPoint)
-        {
+    //@IBAction func whenTapped(sender: UITapGestureRecognizer) {
+      //  let selectedPoint = sender.locationInView(self.view)
+        //print(selectedPoint)
+        //if CGRectContainsPoint(superNoteNameLabel.frame, selectedPoint)
+        //{
             //creating the startup alert.
-            let startupAlert = UIAlertController(title: "Instructions", message: "Please tap the + to create a new note", preferredStyle: .Alert)
-            self .presentViewController(startupAlert, animated: true, completion: nil)
-    }
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            //let startupAlert = UIAlertController(title: "Instructions", message: "Please tap the + to create a new note", preferredStyle: .Alert)
+            //self .presentViewController(startupAlert, animated: true, completion: nil)
+   // }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //print(alertTextFieldContentsInViewController)
         let nextViewController = segue.destinationViewController as! secondViewController
         let indexPath = tableViewOutlet.indexPathForSelectedRow!
