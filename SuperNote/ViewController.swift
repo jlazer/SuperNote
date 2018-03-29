@@ -21,32 +21,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib.
     }
     //Configuring The TableView.
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         cell.textLabel?.text = notesInTableViewArray[indexPath.row].titleTextField
         return cell
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notesInTableViewArray.count
     }
     //Add Note Button
-    @IBAction func addNewValue(sender: UIButton) {
+    @IBAction func addNewValue(_ sender: UIButton) {
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "Create A Note", message: "Please fill the parameters", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Create A Note", message: "Please fill the parameters", preferredStyle: .alert)
         //2. Add the text field. You can configure it however you need.
-        alert.addTextFieldWithConfigurationHandler({ (titleTextField) -> Void in
+        alert.addTextField(configurationHandler: { (titleTextField) -> Void in
             titleTextField.text = "Title."
         })
-        alert.addTextFieldWithConfigurationHandler({ (notesTextField) -> Void in
+        alert.addTextField(configurationHandler: { (notesTextField) -> Void in
             notesTextField.text = "Notes."
         })
         //3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             let titleTextField = alert.textFields![0] as UITextField
             let notesTextField = alert.textFields![1] as UITextField
             //Placing the contents of the two textfields into the a buffer.
             
-            var currentContent = alertTextFieldContents()
+            let currentContent = alertTextFieldContents()
             currentContent.titleTextField = titleTextField.text!
             currentContent.notesTextField = notesTextField.text!
             self.notesInTableViewArray.append(currentContent)
@@ -56,9 +56,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("Notes Text field: \(currentContent.notesTextField)")
         }))
         // 4. Present the alert.
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
+    
+    @IBAction func superNoteInfoButton(_ sender: UIButton) {
+        let startupAlert = UIAlertController(title: "Instructions", message: "Please tap the + to create a new note", preferredStyle: .alert)
+        self .present(startupAlert, animated: true, completion: nil)
+        self.present(startupAlert, animated: true, completion: nil)
+        startupAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            
+        }))
+    }
+    
     //creating a tap gesture recognizer to display an alert.
     //@IBAction func whenTapped(sender: UITapGestureRecognizer) {
       //  let selectedPoint = sender.locationInView(self.view)
@@ -69,9 +79,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //let startupAlert = UIAlertController(title: "Instructions", message: "Please tap the + to create a new note", preferredStyle: .Alert)
             //self .presentViewController(startupAlert, animated: true, completion: nil)
    // }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //print(alertTextFieldContentsInViewController)
-        let nextViewController = segue.destinationViewController as! secondViewController
+        let nextViewController = segue.destination as! secondViewController
         let indexPath = tableViewOutlet.indexPathForSelectedRow!
         let selectedTableCell = notesInTableViewArray[indexPath.row]
         nextViewController.alertTextFieldContentsInSecondViewController = selectedTableCell

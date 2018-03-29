@@ -18,33 +18,36 @@ class secondViewController: UIViewController {
     @IBOutlet weak var notesLabel: UILabel!
     
     @IBOutlet weak var notesTextView: UITextView!
+    
+    @IBOutlet weak var titleTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("This is from the secondViewController!! Title TextField: \(alertTextFieldContentsInSecondViewController.titleTextField)")
         print("This is from the secondViewController!! Notes TextField: \(alertTextFieldContentsInSecondViewController.notesTextField)")
-        titlelabel.text = "\(alertTextFieldContentsInSecondViewController.titleTextField)"
-        notesLabel.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
+//        titlelabel.text = "\(alertTextFieldContentsInSecondViewController.titleTextField)"
+//        notesLabel.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
+        titleTextView.text = "\(alertTextFieldContentsInSecondViewController.titleTextField)"
         notesTextView.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
+        
+        
         //alertTextFieldContentsInSecondViewController.notesTextField = notesTextView.text
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func updateNotesWithContentsOfTextView(sender: UIButton) {
+    @IBAction func updateNotesWithContentsOfTextView(_ sender: UIButton) {
         //Allowing users to edit the contents of their notes.
         alertTextFieldContentsInSecondViewController.notesTextField = notesTextView.text
+        alertTextFieldContentsInSecondViewController.titleTextField = titleTextView.text
         //notesTextView.text = alertTextFieldContentsInSecondViewController.notesTextField
-        notesLabel.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
+        titleTextView.text = "\(alertTextFieldContentsInSecondViewController.titleTextField)"
+        notesTextView.text = "\(alertTextFieldContentsInSecondViewController.notesTextField)"
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nvc = segue.destination as! ViewController
+        //wnvc.notesInTableViewArray = alertTextFieldContentsInSecondViewController
+        
     }
-    */
-
 }
